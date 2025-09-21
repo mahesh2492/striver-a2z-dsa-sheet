@@ -6,15 +6,15 @@ public class SecondLargestElement {
 
         //10, 5, 10 -> 10
 
-        for(int i = 0; i < arr.length; i++) {
-            if(arr[i] > max) {
-                max = arr[i];
+        for (int j : arr) {
+            if (j > max) {
+                max = j;
             }
         }
 
-        for(int i = 0; i < arr.length; i++) {
-            if(arr[i] > second_max && arr[i] != max) {
-                second_max = arr[i];
+        for (int j : arr) {
+            if (j > second_max && j != max) {
+                second_max = j;
             }
         }
         return second_max;
