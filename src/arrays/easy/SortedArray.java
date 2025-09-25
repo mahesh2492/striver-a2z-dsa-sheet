@@ -7,10 +7,13 @@ public class SortedArray {
         for(int i = 0; i < nums.length; i++) {
             if(nums[i] > nums[(i + 1) % nums.length]) {
                 maybeRotationPoint++;
+                if(maybeRotationPoint > 1) {
+                    return false;
+                }
             }
         }
         System.out.println("rotation " + maybeRotationPoint);
-        return maybeRotationPoint <= 1;
+        return true;
     }
 
     public static void main(String[] args) {
