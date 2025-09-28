@@ -5,27 +5,28 @@ import static java.lang.Math.abs;
 public class RotateArray {
 
     // 1, 2, 3, 4, 5, 6, 7 -> 7, 1, 2, 3, 4, 5, 6
-    public static int[] rotate(int[] nums, int k) {
-        int []rotatedArray = new int[nums.length];
-        int left = 0, right = abs(nums.length - k);
-        System.out.println("index " + right);
-        for(int i = right; i < nums.length; i++) {
-          rotatedArray[left++] = nums[i];
-        }
+    public static void rotate(int[] nums, int k) {
+        int len = nums.length;
+        k = k % len;
 
-        for(int i = 0; i < nums.length - k; i++) {
-            rotatedArray[left++] = nums[i];
-        }
+        reverse(nums, 0, len - 1);
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, len - 1);
+    }
 
-        return rotatedArray;
+    static void reverse(int[] arr, int start, int end) {
+        for(int i = start, j = end; i <= j; i++, j--) {
+            int temp = arr[j];
+            arr[j] = arr[i];
+            arr[i] = temp;
+        }
     }
 
     public static void main(String[] args) {
-         //int []arr = {1, 2, 3, 4, 5, 6, 7};
-         int []arr = {1, 2};
-         int []rotated_arr = rotate(arr, 7);
-        for(int i = 0; i < rotated_arr.length; i++) {
-            System.out.print(rotated_arr[i] + " ");
+         int []arr = {1, 2, 3, 4, 5, 6, 7};
+         rotate(arr, 3);
+        for (int j : arr) {
+            System.out.print(j + " ");
         }
     }
 }
