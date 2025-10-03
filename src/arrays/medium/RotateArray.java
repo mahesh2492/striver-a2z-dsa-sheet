@@ -1,4 +1,4 @@
-package arrays.easy;
+package arrays.medium;
 
 import static java.lang.Math.abs;
 
