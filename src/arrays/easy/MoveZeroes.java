@@ -6,7 +6,7 @@ public class MoveZeroes {
     // Using extra memory
     public static void moveZeroes(int[] nums) {
         int i, j = 0;
-        ArrayList<Integer> arrayList = new ArrayList<Integer>();
+        ArrayList<Integer> arrayList = new ArrayList<>();
 
         while(j < nums.length) {
               if(nums[j] != 0) {
