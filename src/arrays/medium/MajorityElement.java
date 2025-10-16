@@ -28,9 +28,41 @@ public class MajorityElement {
         return value;
     }
 
-    public static void main(String[] args) {
-       //int[] arr = {2,2,1,1,1,2,2};
-       int[] arr = {1};
+    /*
+       Better approach - Moore voting algo
+     */
+
+    public static int majorityElementOptimal(int[] nums) {
+       int count = 1, majorityElement = nums[0];
+        for(int i = 1; i < nums.length; i++) {
+           if(count == 0) {
+               count = 1;
+               majorityElement = nums[i];
+           } else if(nums[i] == majorityElement) {
+               count++;
+           } else {
+               count--;
+           }
+       }
+
+        count = 0;
+        for(int i = 0; i < nums.length; i++) {
+            if(nums[i] == majorityElement) {
+                count++;
+            }
+        }
+
+        if(count > nums.length / 2) {
+            return majorityElement;
+        }
+
+        return -1;
+    }
+
+
+        public static void main(String[] args) {
+       int[] arr = {6, 5, 5};
+       //int[] arr = {1};
        /*
            1 -> 3
            2 -> 4
@@ -39,5 +71,6 @@ public class MajorityElement {
         */
 
         System.out.println("Majority element: " + majorityElement(arr));
+        System.out.println("Majority element: " + majorityElementOptimal(arr));
     }
 }
