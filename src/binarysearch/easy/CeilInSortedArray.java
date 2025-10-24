@@ -18,7 +18,7 @@ public class CeilInSortedArray {
     }
 
     public static void main(String[] args) {
-       int[] arr = {1, 2, 8, 10, 11, 12, 19};
+        int[] arr = {1, 2, 8, 10, 11, 12, 19};
 
         System.out.println("Ceiling in Sorted Array: " + findCeil(arr, 5));
         System.out.println("Ceiling in Sorted Array: " + findCeil(arr, 20));
