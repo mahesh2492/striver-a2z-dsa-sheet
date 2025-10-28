@@ -1,4 +1,4 @@
-package binarysearch.easy;
+package binarysearch.oneDArray;
 
 public class FloorInSortedArray {
     public static int findFloor(int[] arr, int target) {

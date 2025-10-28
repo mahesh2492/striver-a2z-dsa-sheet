@@ -1,4 +1,4 @@
-package binarysearch.easy;
+package binarysearch.oneDArray;
 
 public class UpperBound {
     static int upperBound(int[] arr, int target) {

@@ -1,4 +1,4 @@
-package binarysearch.easy;
+package binarysearch.oneDArray;
 
 public class SearchInsertPosition {
     static public int searchInsert(int[] nums, int target) {
